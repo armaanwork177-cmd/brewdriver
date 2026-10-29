@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brew Driver – A Bar Engineer | Draft Beer Systems, Beer Towers & Refrigeration</title>
+<meta name="description" content="Brew Driver is a bar engineer: customised draft beer systems, beer towers, flash chillers, kegerators, refrigeration and brewery fittings. Service and support 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--k:#0b0b0b;--w:#fff;--s:#f4f4f2;--g:#6b6b6b;--l:#e4e4e1;--f:'Inter',system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:400 16px/1.65 var(--f);color:var(--k);background:var(--w);-webkit-font-smoothing:antialiased}
+img,video{display:block;width:100%}a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,90%);margin:auto}
+h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(30px,4vw,48px)}h3{font-size:20px;letter-spacing:-.01em}
+.sec{padding:clamp(64px,9vw,120px) 0}.s{background:var(--s)}.k{background:var(--k);color:#fff}
+.lead{color:var(--g);max-width:56ch;margin-top:16px}.k .lead{color:#a8a8a8}
+.top{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.btn{display:inline-block;padding:14px 28px;font-weight:500;font-size:15px;border:1.5px solid var(--k);border-radius:2px;transition:.2s;cursor:pointer;font-family:inherit}
+.btn.d{background:var(--k);color:#fff}.btn.d:hover{background:#fff;color:var(--k)}
+.btn.o:hover{background:var(--k);color:#fff}
+.btn.lw{border-color:#fff;color:#fff}.btn.lw:hover{background:#fff;color:var(--k)}.btn.w{background:#fff;color:var(--k);border-color:#fff}.btn.w:hover{background:transparent;color:#fff}
+:focus-visible{outline:2px solid var(--k);outline-offset:3px}.k :focus-visible,.hero :focus-visible{outline-color:#fff}
+/* header */
+.hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--l)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.hd .logo img{height:44px;width:auto}
+.nav{display:flex;gap:32px;font-size:15px;font-weight:500}.nav a{color:#444}.nav a:hover{color:var(--k)}
+.hd .btn{padding:10px 20px;font-size:14px}
+.bg{display:none;background:none;border:1.5px solid var(--k);padding:8px 14px;font:500 14px var(--f);cursor:pointer;border-radius:2px}
+/* hero */
+.hero{position:relative;height:calc(100svh - 77px);min-height:540px;max-height:860px;background:#000;color:#fff;display:flex;align-items:flex-end}
+.hero .hs{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility 0s .9s}
+.hero .hs.on{opacity:1;visibility:visible;transition:opacity .9s ease}
+.hero video{position:absolute;inset:0;height:100%;object-fit:cover}
+.hero .ctl{position:absolute;z-index:3;left:0;right:0;bottom:24px}
+.hero .ctl .wrap{display:flex;align-items:center;justify-content:flex-start;gap:28px;padding:0}
+.hero .dots{display:flex;gap:10px}
+.hero .dots button{position:relative;width:56px;height:18px;background:none;border:0;cursor:pointer;padding:0}
+.hero .dots button:before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:rgba(255,255,255,.35)}
+.hero .dots button i{position:absolute;left:0;top:8px;height:2px;width:0;background:#fff}
+.hero .dots button.on i{width:100%}
+.hero .arr{display:flex;gap:10px}
+.hero .arr button{width:46px;height:46px;border:1.5px solid rgba(255,255,255,.7);background:rgba(0,0,0,.25);color:#fff;border-radius:50%;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(4px);transition:.2s}
+.hero .arr button:hover{background:#fff;color:#000}
+.hero .arr svg{width:18px;height:18px}
+@media(max-width:600px){.hero .arr button{width:40px;height:40px}.hero .dots button{width:40px}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.1) 60%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:64px}
+.hero h1{font-size:clamp(42px,7vw,92px);max-width:13ch;margin-bottom:22px}
+.hero p{max-width:52ch;font-size:18px;color:#e6e6e6;margin-bottom:32px}.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats div{padding:32px 24px;border-left:1px solid var(--l)}.stats div:first-child{border-left:0;padding-left:0}
+.stats b{display:block;font-size:40px;font-weight:600;letter-spacing:-.02em;line-height:1.1}.stats span{font-size:14px;color:var(--g)}
+/* clients */
+/* products */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pc img{aspect-ratio:1/1;object-fit:cover;background:var(--s);transition:.4s}.pc a{display:block;overflow:hidden;background:var(--s)}.pc:hover img{transform:scale(1.04)}
+.pc h3{margin-top:16px;font-size:18px}.pc p{font-size:14px;color:var(--g)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:56px;padding-top:32px;border-top:1px solid var(--l)}
+.chips a{padding:8px 16px;border:1px solid var(--l);border-radius:99px;font-size:14px;transition:.2s}.chips a:hover{background:var(--k);color:#fff;border-color:var(--k)}
+/* split */
+.sp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:center}
+.sp img{aspect-ratio:4/3;object-fit:cover}
+.tk{list-style:none;margin:32px 0}.tk li{padding:16px 0;border-top:1px solid #2a2a2a;display:flex;gap:20px}.tk li:last-child{border-bottom:1px solid #2a2a2a}.tk b{min-width:150px;font-weight:600}.tk span{color:#a8a8a8}
+/* industries */
+.ig{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--l);border:1px solid var(--l)}
+.ig div{background:#fff;padding:32px 26px}.ig p{color:var(--g);font-size:15px;margin-top:10px}
+/* services */
+.sv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,96px);align-items:start}
+.sv img{aspect-ratio:4/5;object-fit:cover}
+.sl details{border-top:1px solid var(--l);padding:22px 0}.sl details:last-child{border-bottom:1px solid var(--l)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:600;font-size:19px}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-weight:400;font-size:24px;line-height:1;transition:.2s}details[open] summary:after{transform:rotate(45deg)}
+details p{margin-top:10px;color:var(--g);max-width:52ch}
+/* process */
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;list-style:none}
+.st li{border-top:2px solid var(--k);padding-top:20px}.st b{font-size:14px;color:var(--g);font-weight:500}.st h3{margin:6px 0 8px}.st p{color:var(--g);font-size:15px}
+/* fair */
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}.fg img{height:100%;min-height:300px;object-fit:cover}
+.pb{margin-top:32px;font-size:14px;color:var(--g)}
+/* contact */
+.ct dl{margin-top:32px}.ct dt{font-size:13px;color:var(--g);margin-top:18px}.ct dd{font-size:20px;font-weight:500}
+form{display:grid;gap:18px;background:var(--s);padding:clamp(24px,4vw,44px)}label{display:grid;gap:6px;font-size:14px;font-weight:500}
+input,textarea{font:inherit;padding:12px 14px;border:1px solid #cfcfcb;background:#fff;border-radius:2px}input:focus,textarea:focus{outline:2px solid var(--k);outline-offset:-1px}
+.note{font-size:14px;color:var(--g)}
+footer{border-top:1px solid var(--l);padding:56px 0 28px}
+footer .t{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:40px}footer .logo img{height:50px;width:auto}
+footer .t p{color:var(--g);max-width:38ch;margin-top:14px;font-size:15px}
+footer nav{display:flex;gap:28px;flex-wrap:wrap;font-size:15px}footer nav a:hover{text-decoration:underline}
+footer .c{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--l);font-size:13px;color:var(--g)}
+.fl{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;gap:8px}
+.fl a{background:var(--k);color:#fff;padding:11px 18px;font-size:14px;font-weight:500;border-radius:99px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+@media(max-width:900px){
+.nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--l);padding:8px 5%}.nav a{padding:14px 0;border-bottom:1px solid var(--l)}.hd.open .nav{display:flex}
+.bg{display:block}.hd .btn{display:none}
+.stats .wrap{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0;padding-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--l)}
+.pg{grid-template-columns:1fr 1fr;gap:18px}.sp,.sv{grid-template-columns:1fr}.ig{grid-template-columns:1fr 1fr}.st{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr}.fg img{min-height:0;aspect-ratio:3/2}
+.tk li{flex-direction:column;gap:2px}.fl a:first-child{display:none}}
+@media(max-width:520px){.pg,.ig{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.pc{background:#fff;border:1px solid var(--l);border-radius:14px;overflow:hidden;transition:.25s}.pc:hover{box-shadow:0 14px 36px rgba(0,0,0,.1);transform:translateY(-4px)}
+.pc h3{padding:0 22px;margin-top:18px}.pc p{padding:2px 22px 22px}
+.ib{width:52px;height:52px;border-radius:50%;background:var(--k);color:#fff;display:grid;place-items:center;margin-bottom:20px}.ib svg{width:24px;height:24px}
+.ig{gap:20px;background:none;border:0}.ig div{border:1px solid var(--l);border-radius:14px;padding:30px 26px;transition:.25s}.ig div:hover{box-shadow:0 14px 36px rgba(0,0,0,.08);transform:translateY(-4px)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cd{background:#fff;border:1px solid var(--l);border-radius:14px;padding:30px 26px;transition:.25s}.cd:hover{box-shadow:0 14px 36px rgba(0,0,0,.08);transform:translateY(-4px)}.cd p{color:var(--g);font-size:15px;margin-top:10px}
+.cd.im{padding:0;overflow:hidden}.cd.im img{object-fit:cover}.cd.im div{padding:24px 26px 28px}
+.sp img,.sv img,.fg img{border-radius:14px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}.mini div{border:1px solid #2c2c2c;border-radius:12px;padding:18px 20px}.mini b{display:block;font-size:24px;font-weight:600}.mini span{font-size:14px;color:#a8a8a8}
+.cta{position:relative;border-radius:18px;overflow:hidden;color:#fff;padding:clamp(48px,8vw,96px) clamp(28px,6vw,72px);background:#000 url(assets/img/booth-wide.jpg) center/cover}.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.3))}.cta>*{position:relative}.cta h2{max-width:18ch}.cta p{margin:16px 0 30px;max-width:46ch;color:#e0e0e0}.cta .row{display:flex;gap:12px;flex-wrap:wrap}
+form{border-radius:14px;border:1px solid var(--l)}
+.fw{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:44px}.fw h4{font-size:14px;margin-bottom:12px}.fw a,.fw span{display:block;color:var(--g);font-size:15px;padding:4px 0}.fw a:hover{color:var(--k)}
+.soc{display:flex;gap:10px;margin-top:22px}.fw .soc a{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;padding:0;transition:.2s}.fw .soc a:hover{transform:translateY(-3px)}.soc svg{width:20px;height:20px}
+.fl{flex-direction:column;gap:10px}.fl a{display:flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;color:#fff;border-radius:99px;font-weight:600;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:.2s}.fl a:hover{transform:translateY(-3px)}.fl svg{width:24px;height:24px}.fl .wa{background:#25D366}.fl .cb{background:#1d6ff2}
+@media(max-width:900px){.cards,.cards.c3{grid-template-columns:1fr 1fr}.fw{grid-template-columns:1fr 1fr}.fl a:first-child{display:flex}.fl a span{display:none}.fl a{padding:13px}}
+@media(max-width:560px){.cards,.cards.c3,.fw{grid-template-columns:1fr}}
+.trust{padding:40px 0;border-block:1px solid var(--l);background:var(--s)}.trust p{text-align:center;font-size:14px;color:var(--g);margin-bottom:22px}
+.tm{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tt{display:flex;width:max-content;animation:tslide 40s linear infinite}.tm:hover .tt{animation-play-state:paused}
+.tg{display:flex;gap:16px;padding-right:16px}
+.tg span{display:grid;place-items:center;min-width:200px;height:72px;padding:0 24px;background:#fff;border:1px solid var(--l);border-radius:12px;font-weight:600;font-size:16px;color:#555;white-space:nowrap;transition:.2s}.tg span:hover{color:var(--k);border-color:var(--k)}
+@keyframes tslide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tt{animation:none}.tm{overflow-x:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.700 6.300a4 4 0 0 0-5.400 5.400L3 18l3 3 6.300-6.300a4 4 0 0 0 5.400-5.400l-2.600 2.600-2.400-.6-.6-2.400z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 15"/><path d="M5 19c3-5 6-8 10-10"/></symbol>
+<symbol id="i-mug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h10v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M15 10h2a2 2 0 0 1 0 6h-2"/><path d="M5 8c0-2 2-3 5-3s5 1 5 3"/></symbol>
+<symbol id="i-bottle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3h4v4l2 3v10a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V10l2-3z"/></symbol>
+<symbol id="i-tank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6c0-1.700 2.700-3 6-3s6 1.300 6 3v12c0 1.700-2.700 3-6 3s-6-1.300-6-3z"/><path d="M6 6c0 1.700 2.700 3 6 3s6-1.300 6-3"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M4.200 7.500l15.600 9M4.200 16.500l15.600-9"/></symbol>
+</defs></svg>
+<header class="hd" id="hd"><div class="wrap">
+<a href="#top" class="logo" aria-label="Brew Driver home"><img src="assets/img/logo.png" alt="Brew Driver – A Bar Engineer"></a>
+<nav class="nav" id="nav" aria-label="Main"><a href="#range">Products</a><a href="#about">About</a><a href="#services">Services</a><a href="#events">Events</a><a href="#contact">Contact</a></nav>
+<a href="#contact" class="btn d">Get a quote</a>
+<button class="bg" id="bg" aria-expanded="false">Menu</button>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="Brew Driver highlights">
+<div class="hs on" role="group" aria-roledescription="slide" aria-label="1 of 2">
+<video id="hv" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg" data-d="assets/video/hero-desktop.mp4" data-m="assets/video/hero-mobile.mp4"></video>
+</div>
+<div class="hs" role="group" aria-roledescription="slide" aria-label="2 of 2">
+<video muted playsinline preload="auto" poster="assets/img/hero-poster-2.jpg" data-d="assets/video/slide2-desktop.mp4" data-m="assets/video/slide2-mobile.mp4" data-p="assets/img/hero-poster-2.jpg" data-pm="assets/img/hero-poster-2-m.jpg"></video>
+</div>
+<div class="ctl"><div class="wrap"><div class="dots" role="tablist"><button role="tab" aria-selected="true" aria-label="Slide 1"><i></i></button><button role="tab" aria-selected="false" aria-label="Slide 2"><i></i></button></div><div class="arr"><button id="hp" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button><button id="hn" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button></div></div></div>
+</section>
+
+<section class="stats"><div class="wrap">
+<div><b>24/7</b><span>Service and support, weekends and holidays included</span></div>
+<div><b>28</b><span>Product categories under one roof</span></div>
+<div><b>35+</b><span>Breweries, hotels and bars served</span></div>
+<div><b>4</b><span>Industries: beer, beverage, brewing, refrigerant</span></div>
+</div></section>
+
+<section class="trust" aria-label="Our clients"><div class="wrap"><p>Trusted by breweries, hotels and bars across India</p></div>
+<div class="tm"><div class="tt"><div class="tg"><span>Bira</span><span>Bangalore Brew Works</span><span>Taj Bangalore</span><span>Brewnation</span><span>The Beer Cafe</span><span>Big Barrel</span><span>Beertales</span><span>Flying Kombucha</span><span>Brother Barley</span><span>Briggs Brewery</span><span>Hotel Mirage</span><span>District 6</span><span>The Great Beer</span><span>Brew59</span><span>The Story House</span><span>Rock &amp; Storm</span></div><div class="tg" aria-hidden="true"><span>Bira</span><span>Bangalore Brew Works</span><span>Taj Bangalore</span><span>Brewnation</span><span>The Beer Cafe</span><span>Big Barrel</span><span>Beertales</span><span>Flying Kombucha</span><span>Brother Barley</span><span>Briggs Brewery</span><span>Hotel Mirage</span><span>District 6</span><span>The Great Beer</span><span>Brew59</span><span>The Story House</span><span>Rock &amp; Storm</span></div></div></div></section>
+
+<section class="sec" id="range"><div class="wrap">
+<div class="top"><div><h2>Beer towers &amp; dispensers</h2><p class="lead">Silver, copper, gold and black towers from one to twelve ways, with the regulators, couplers and chillers behind them.</p></div><a href="#contact" class="btn o">View all 28 categories</a></div>
+<div class="pg">
+<article class="pc"><a href="#contact"><img src="assets/img/products/tower-t6.webp" alt="Six-way steel T-shape beer tower" loading="lazy"></a><h3>T-Shape Beer Tower</h3><p>6 ways, polished steel</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/tower-copper.webp" alt="Copper beer tower with lit tap badges" loading="lazy"></a><h3>Copper Beer Tower</h3><p>Antique copper finish</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/tower-black.webp" alt="Black and gold beer tower" loading="lazy"></a><h3>Black &amp; Gold Tower</h3><p>3 ways with drip tray</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/towers-gold.webp" alt="Row of gold column towers" loading="lazy"></a><h3>Gold Column Towers</h3><p>Single way</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/chiller.webp" alt="Brew Driver flash chiller" loading="lazy"></a><h3>Flash Chiller</h3><p>Stainless steel, R290</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/manifold.webp" style="object-fit:contain;background:#fff" alt="Gas manifold panel with gauges" loading="lazy"></a><h3>Gas Manifold System</h3><p>6 lines</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/regulator.webp" alt="Dual gauge CO2 regulator" loading="lazy"></a><h3>CO2 Regulator</h3><p>Dual gauge</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/couplers.webp" alt="Keg couplers" loading="lazy"></a><h3>Keg Couplers</h3><p>Micro Matic</p></article>
+<article class="pc"><a href="#contact"><img src="assets/img/products/kegs.webp" alt="Steel kegs in three sizes" loading="lazy"></a><h3>Steel Kegs</h3><p>Three sizes</p></article>
+</div>
+<div class="chips"><a href="#contact">Kegerators</a><a href="#contact">Beer Chiller</a><a href="#contact">Beer Faucets</a><a href="#contact">Glass Froster</a><a href="#contact">Soda Carbonation Machine</a><a href="#contact">U Bend</a><a href="#contact">Talos PET Keg</a><a href="#contact">Plate Filter Press</a><a href="#contact">+ 17 more</a></div>
+</div></section>
+
+<section class="sec k"><div class="wrap sp">
+<img src="assets/img/tower-copper.jpg" alt="Copper beer tower with lit tap badges" loading="lazy" style="aspect-ratio:4/5">
+<div><h2>The copper tower, built to be the centrepiece</h2><p class="lead">An antique copper finish, lit tap badges and a steel drip tray. Available from one to twelve ways.</p>
+<div class="mini"><div><b>1 to 12</b><span>Ways</span></div><div><b>Copper</b><span>Antique finish</span></div><div><b>Lit</b><span>Tap badges</span></div><div><b>Steel</b><span>Drip tray</span></div></div>
+<a href="#contact" class="btn w">Enquire about towers</a></div></div></section>
+
+<section class="sec s"><div class="wrap">
+<div class="top"><div><h2>Why bars choose Brew Driver</h2><p class="lead">Engineering you can rely on, from the first drawing to the thousandth pour.</p></div></div>
+<div class="cards">
+<div class="cd"><div class="ib"><svg><use href="#i-clock"/></svg></div><h3>24/7 support</h3><p>Service on weekends, public holidays and after hours.</p></div>
+<div class="cd"><div class="ib"><svg><use href="#i-shield"/></svg></div><h3>Independent advice</h3><p>We endorse no beer brand, so our advice is objective.</p></div>
+<div class="cd"><div class="ib"><svg><use href="#i-wrench"/></svg></div><h3>Custom engineering</h3><p>Every system is designed around your venue and your kegs.</p></div>
+<div class="cd"><div class="ib"><svg><use href="#i-leaf"/></svg></div><h3>Eco-friendly cooling</h3><p>Chillers run on natural R290 refrigerant.</p></div>
+</div></div></section>
+
+<section class="sec"><div class="wrap">
+<div class="top"><div><h2>Kegs, filters &amp; fittings</h2><p class="lead">Everything that sits between the brewery and the bar.</p></div><a href="#contact" class="btn o">Request a catalogue</a></div>
+<div class="cards c3">
+<div class="cd im"><img src="assets/img/talos.jpg" alt="Talos PET kegs" loading="lazy" style="aspect-ratio:1/1"><div><h3>Talos PET Keg</h3><p>A 30 litre PET keg that makes selling keg beer as easy as bottled beer.</p></div></div>
+<div class="cd im"><img src="assets/img/filter-press.jpg" alt="Plate filter press on a trolley" loading="lazy" style="aspect-ratio:1/1"><div><h3>Plate Filter Press</h3><p>A stainless steel plate-and-frame filter on a mobile trolley.</p></div></div>
+<div class="cd im"><img src="assets/img/coupler.jpg" alt="Micro Matic keg coupler" loading="lazy" style="aspect-ratio:1/1"><div><h3>Keg Couplers</h3><p>Micro Matic couplers for quick, secure keg changes.</p></div></div>
+</div></div></section>
+
+<section class="sec k" id="about"><div class="wrap sp">
+<div><h2>The engineer behind a perfect pour</h2>
+<p class="lead">We are an independent company that does not endorse any beer brand, so our advice is built around your bar, your kegs and your numbers.</p>
+<ul class="tk"><li><b>Objective advice</b><span>Equipment, layout and running cost.</span></li><li><b>Training</b><span>Teams learn to cut beer waste.</span></li><li><b>Support</b><span>Weekends, public holidays and after hours.</span></li><li><b>Built to last</b><span>Energy-efficient, durable systems.</span></li></ul>
+<a href="#contact" class="btn w">Start a conversation</a></div>
+<img src="assets/img/booth-copper.jpg" alt="Brew Driver stand with copper beer tower" loading="lazy">
+</div></section>
+
+<section class="sec s"><div class="wrap">
+<div class="top"><div><h2>Industries we serve</h2><p class="lead">From a neighbourhood taproom to a hotel chain, we keep beverages cold, fresh and flowing.</p></div></div>
+<div class="ig"><div><div class="ib"><svg><use href="#i-mug"/></svg></div><h3>Beer</h3><p>Draft systems, towers, taps and chillers for pubs, bars and restaurants.</p></div><div><div class="ib"><svg><use href="#i-bottle"/></svg></div><h3>Beverage</h3><p>Soda carbonation, kombucha and cold-beverage dispensing.</p></div><div><div class="ib"><svg><use href="#i-tank"/></svg></div><h3>Brewing</h3><p>Micro-brewery installation, fittings, gas and cooling infrastructure.</p></div><div><div class="ib"><svg><use href="#i-snow"/></svg></div><h3>Refrigerant</h3><p>Commercial refrigeration and air conditioning, installed and maintained.</p></div></div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap sv">
+<img src="assets/img/tower-2way.jpg" alt="Two-way steel beer tower" loading="lazy">
+<div><h2>Installed right. Serviced for years.</h2><p class="lead" style="margin-bottom:32px">Every project is custom. We plan, supply and install, then stay with you for maintenance.</p>
+<div class="sl">
+<details open><summary>Micro-brewery installation</summary><p>Complete setup of brewery cooling, gas and dispensing lines.</p></details>
+<details><summary>Remote draft beer systems</summary><p>Keep kegs in the cold room and serve at the bar, perfectly chilled.</p></details>
+<details><summary>Commercial refrigeration</summary><p>Chillers, cold rooms and under-bar refrigeration built to last.</p></details>
+<details><summary>Air conditioning</summary><p>Cooling solutions for bars, restaurants and brewing spaces.</p></details>
+<details><summary>Service &amp; maintenance</summary><p>Preventive and breakdown support, 24/7, weekends and holidays too.</p></details>
+</div></div></div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta"><h2>Planning a new bar or upgrading yours?</h2><p>Tell us about your venue and an engineer will suggest the right system.</p><div class="row"><a href="#contact" class="btn w">Get a quote</a><a href="tel:+919999426044" class="btn lw">Call +91-9999426044</a></div></div></div></section>
+
+<section class="sec s"><div class="wrap">
+<div class="top"><h2>From first call to first pour</h2></div>
+<ol class="st"><li><b>Step 1</b><h3>Consult</h3><p>Tell us about your venue, volumes and kegs.</p></li><li><b>Step 2</b><h3>Design</h3><p>A custom layout with the right equipment.</p></li><li><b>Step 3</b><h3>Install</h3><p>Clean installation by our own engineers.</p></li><li><b>Step 4</b><h3>Maintain</h3><p>Ongoing service and support, around the clock.</p></li></ol>
+</div></section>
+
+<section class="sec" id="events"><div class="wrap">
+<div class="top"><div><h2>At the trade fair</h2><p class="lead">7th Trade Fair &amp; Conference, Bengaluru, September 2026. Stall B219.</p></div></div>
+<div class="fg"><img src="assets/img/booth-wide.jpg" alt="Brew Driver stand at the trade fair" loading="lazy"><img src="assets/img/brochures.jpg" alt="Brochure rack beside a draft unit" loading="lazy"><img src="assets/img/booth-tall.jpg" alt="Stand corner with copper tower" loading="lazy"></div>
+<p class="pb">India's leading manufacturer of beer dispensing units, flash chillers and line chillers. Partner brands: Beerequip, Bevex, DMfit, John Guest, Oetiker, Pentair, Perlick, Titan, Xylem.</p>
+</div></section>
+
+<section class="sec s"><div class="wrap sp" style="align-items:start">
+<div><h2>Questions, answered</h2><p class="lead">Can't find what you need? Call us any time.</p><a href="tel:+919999426044" class="btn d" style="margin-top:28px">+91-9999426044</a></div>
+<div class="sl">
+<details open><summary>How does maintenance work?</summary><p>We offer preventive service plans and breakdown support. Share your setup and we will suggest a schedule that suits your venue.</p></details>
+<details><summary>Can you install at my existing bar?</summary><p>Yes. We install new systems and upgrade existing ones for bars, restaurants, hotels and breweries.</p></details>
+<details><summary>What about warranty?</summary><p>Warranty depends on the product. Contact us for the terms of the equipment you are interested in.</p></details>
+<details><summary>Do you support different keg sizes?</summary><p>Our systems are flexible with common keg sizes. Tell us what you use and we will configure accordingly.</p></details>
+<details><summary>Do you do custom R&amp;D?</summary><p>We build customised bar and beverage solutions around your requirement. Get in touch with your brief.</p></details>
+</div></div></section>
+
+<section class="sec" id="contact"><div class="wrap sp ct" style="align-items:start">
+<div><h2>Let's get your beer perfect</h2><p class="lead">Send us your requirement and an engineer will call you back.</p>
+<dl><dt>Phone, 24/7</dt><dd><a href="tel:+919999426044">+91-9999426044</a></dd><dt>Address</dt><dd>298/2, Apollo Colony, Ismilepur,<br>Faridabad, Haryana – 121003</dd></dl></div>
+<form id="lf"><label>Name<input name="name" required placeholder="Your name"></label><label>Mobile<input type="tel" name="mobile" required placeholder="+91"></label><label>Email<input type="email" name="email" placeholder="you@company.com"></label><label>Message<textarea name="message" rows="3" placeholder="What are you looking for?"></textarea></label>
+<button class="btn d" type="submit" style="justify-self:start">Send enquiry</button><p class="note" id="fn" hidden>Thank you. (Demo form: connect to your backend.)</p></form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="fw"><div><a href="#top" class="logo"><img src="assets/img/logo.png" alt="Brew Driver – A Bar Engineer"></a><p style="color:var(--g);max-width:34ch;margin-top:14px;font-size:15px">Beer, beverage, brewing and refrigeration engineering.</p>
+<div class="soc"><a href="#" aria-label="Facebook" style="background:#1877F2"><svg viewBox="0 0 24 24" fill="#fff"><path d="M13.500 21v-7.500h2.600l.4-3h-3V8.600c0-.9.3-1.500 1.500-1.500h1.600V4.400c-.3 0-1.200-.1-2.300-.1-2.300 0-3.800 1.400-3.800 3.900v2.300H7.900v3h2.600V21z"/></svg></a><a href="#" aria-label="Instagram" style="background:linear-gradient(45deg,#f9ce34,#ee2a7b 55%,#6228d7)"><svg viewBox="0 0 24 24" fill="#fff"><rect x="4.500" y="4.500" width="15" height="15" rx="4.500" fill="none" stroke="#fff" stroke-width="1.800"/><circle cx="12" cy="12" r="3.400" fill="none" stroke="#fff" stroke-width="1.800"/><circle cx="16.600" cy="7.400" r="1.100"/></svg></a><a href="#" aria-label="LinkedIn" style="background:#0A66C2"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.900 9.500H4.200V19h2.700zM5.500 5a1.600 1.600 0 100 3.200 1.600 1.600 0 000-3.200zM19.800 19v-5.200c0-2.500-1.300-3.600-3.100-3.600-1.400 0-2.100.8-2.400 1.300V9.500h-2.700V19h2.700v-5.300c0-.9.400-1.800 1.600-1.800 1.100 0 1.400.9 1.400 1.800V19z"/></svg></a><a href="#" aria-label="Pinterest" style="background:#E60023"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.200 4.500c-4 0-6 2.700-6 5.100 0 1.400.8 3.100 2 3.700.2.100.3 0 .3-.2l.3-1.200c0-.2 0-.3-.1-.4-.4-.5-.7-1.300-.7-2.100 0-2 1.500-3.900 4.100-3.900 2.200 0 3.800 1.500 3.800 3.700 0 2.500-1.200 4.200-2.900 4.200-.9 0-1.600-.8-1.400-1.700.3-1.100.8-2.300.8-3.100 0-.7-.4-1.300-1.200-1.300-1 0-1.700 1-1.700 2.300 0 .8.3 1.400.3 1.400l-1.100 4.600c-.2 1-.1 2.200 0 2.900 0 .1.1.1.2 0 .1-.1 1.200-1.500 1.600-2.900l.6-2.300c.3.600 1.200 1.100 2.200 1.100 2.900 0 4.900-2.600 4.900-6.100 0-2.700-2.300-5.100-5.700-5.100z"/></svg></a><a href="#" aria-label="YouTube" style="background:#FF0000"><svg viewBox="0 0 24 24" fill="#fff"><path d="M20.200 8.200c-.2-.8-.8-1.300-1.600-1.500C17.300 6.400 12 6.400 12 6.400s-5.300 0-6.600.3c-.8.200-1.400.7-1.600 1.500C3.500 9.500 3.500 12 3.500 12s0 2.500.3 3.800c.2.800.8 1.300 1.600 1.500 1.300.3 6.600.3 6.600.3s5.300 0 6.600-.3c.8-.2 1.400-.7 1.600-1.500.3-1.300.3-3.800.3-3.800s0-2.500-.3-3.800zM10.300 14.400V9.600l4.200 2.400z"/></svg></a></div></div>
+<div><h4>Company</h4><a href="#about">About us</a><a href="#services">Services</a><a href="#events">Events</a><a href="#contact">Contact</a></div>
+<div><h4>Products</h4><a href="#range">Beer towers</a><a href="#range">Flash chillers</a><a href="#range">Regulators</a><a href="#range">Kegs &amp; couplers</a></div>
+<div><h4>Contact</h4><a href="tel:+919999426044">+91-9999426044</a><span>298/2, Apollo Colony, Ismilepur, Faridabad, Haryana – 121003</span></div></div>
+<div class="c"><span>© 2026 Brew Driver. All rights reserved.</span><span>A Bar Engineer</span></div></div></footer>
+<div class="fl"><a href="https://wa.me/919999426044" class="wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3.200A12.700 12.700 0 005.100 22.300L3.400 28.800l6.700-1.700A12.700 12.700 0 1016 3.200zm0 23.300c-2 0-3.900-.6-5.500-1.600l-.4-.2-4 1 1.100-3.900-.3-.4A10.600 10.600 0 1116 26.500zm5.800-7.900c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.400 4.700.8.300 1.400.5 1.800.6.800.2 1.500.2 2 .1.600-.1 1.900-.8 2.100-1.500.3-.7.300-1.400.2-1.500-.1-.2-.3-.2-.6-.4z"/></svg><span>WhatsApp</span></a><a href="tel:+919999426044" class="cb" aria-label="Call us"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.600 10.800c1.400 2.800 3.800 5.100 6.600 6.600l2.200-2.200c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.600 21 3 13.400 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg><span>Call now</span></a></div>
+<script>
+(()=>{
+const m=matchMedia('(max-width:900px)').matches,hero=document.getElementById('hero'),sl=[...hero.querySelectorAll('.hs')],vs=sl.map(e=>e.querySelector('video')),dots=[...hero.querySelectorAll('.dots button')],bars=dots.map(d=>d.querySelector('i'));
+vs.forEach((v,k)=>{v.src=m?v.dataset.m:v.dataset.d;v.load();v.addEventListener('canplay',()=>{if(k===i&&v.paused)v.play().catch(()=>{})})});
+vs[1].poster=m?vs[1].dataset.pm:vs[1].dataset.p;
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches,HOLD=[10000,null]; // slide 1 holds 10s, slide 2 plays to its end
+let i=0,t=null,raf=0;
+function bar(){cancelAnimationFrame(raf);bars.forEach((b,k)=>{if(k!==i)b.style.width=''});if(still)return;const b=bars[i],v=vs[i];b.style.width='0';const t0=performance.now();
+ (function f(){const p=HOLD[i]?Math.min((performance.now()-t0)/HOLD[i],1):(v.duration?v.currentTime/v.duration:0);b.style.width=(p*100)+'%';raf=requestAnimationFrame(f)})()}
+function go(n){i=(n+sl.length)%sl.length;clearTimeout(t);
+ sl.forEach((e,k)=>{e.classList.toggle('on',k===i);dots[k].classList.toggle('on',k===i);dots[k].setAttribute('aria-selected',k===i);if(k!==i)vs[k].pause()});
+ const v=vs[i];if(i===1)v.currentTime=0;v.play().catch(()=>{});
+ if(!still){bar();if(HOLD[i])t=setTimeout(()=>go(i+1),HOLD[i])}}
+vs[1].onended=()=>{if(!still)go(i+1)};
+document.getElementById('hn').onclick=()=>go(i+1);document.getElementById('hp').onclick=()=>go(i-1);
+dots.forEach((d,k)=>d.onclick=()=>go(k));
+let x0=null;hero.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+hero.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(i+(d<0?1:-1));x0=null});
+hero.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)vs[i].pause();else vs[i].play().catch(()=>{})});
+go(0);
+})();
+const hd=document.getElementById('hd'),bg=document.getElementById('bg');
+bg.onclick=()=>{const o=hd.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.textContent=o?'Close':'Menu'};
+document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>{hd.classList.remove('open');bg.textContent='Menu'});
+document.getElementById('lf').onsubmit=e=>{e.preventDefault();document.getElementById('fn').hidden=false};
+</script>
+</body>
+</html>
